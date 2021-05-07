@@ -14,8 +14,11 @@ function calculateClicked () {
   const hourlyRate = parseInt(document.getElementById("hourly-rate").value)
 
   // process
-
+  const pay = (hoursWorked * hourlyRate) * (1.00 - 0.18)
+  const tax = 0.18 * (hoursWorked * hourlyRate)
 
   // output
-  
+  document.getElementById("user-pay").innerHTML = 'Your pay will be: $' + pay.toFixed(2) + '.'
+  document.getElementById("user-tax").innerHTML = "You will pay $" + tax.toFixed(2) + ' in taxes.'
+
 }
